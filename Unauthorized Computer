@@ -1,0 +1,31 @@
+#####START#####
+
+#UnauthorizedComuter start
+self.HandObject = ""
+self.value = []
+self.frames = 60
+
+#####LOOP#####
+    #UnauthorizedComuter loop
+if EvenCheck(game.TT)and self.frames>60:
+    self.value = []
+    for card in self.HandObject.HC:
+        cardvalue = 0
+        if card.CardType[1] == game.Numlor[1]:
+            
+            cardvalue += 1
+        if card.CardType[0] == game.Numlor[0]:
+            
+            cardvalue += 2
+        self.value.append(cardvalue)
+        #print(self.value)
+    test = Value_Check(self.value)
+    print(test)
+    if test:
+        self.HandObject.HC[test].playing = True
+        print("Computer Plays Card")
+        self.frames = 0
+    else:
+        Draw(game.deck,game.deck.UnauthorizedComputerCards)
+        self.frames = 0
+self.frames += 1
