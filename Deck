@@ -1,0 +1,26 @@
+#####START#####
+
+import random
+self.sprite=sprite_new('unoCards.png',10,8)
+self.deck=[]
+for CARDS in range (1,len(game.AllCards)):
+    card=Cards()
+    #card.x=random.randint(-500,500)
+    card.CardType = game.AllCards[CARDS]
+    card.number = CARDS
+    self.deck.append(card)
+self.HumanCards = Hand()
+self.HumanCards.NameTag = "HHand"
+self.UnauthorizedComputerCards = Hand()
+self.UnauthorizedComputerCards.NameTag = "UCHand"
+self.UnauthorizedComputer = UnauthorizedComuter()
+self.UnauthorizedComputer.HandObject = self.UnauthorizedComputerCards
+
+for i in range(7):
+    Draw(self,self.HumanCards)
+    Draw(self,self.UnauthorizedComputerCards)
+self.x = 1243421
+card = self.deck.pop(len(self.deck)-1)
+card.x = -300
+card.y = 0
+game.Numlor = PC(card)
