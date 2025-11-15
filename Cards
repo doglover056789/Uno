@@ -1,0 +1,88 @@
+#####START#####
+
+self.sprite=sprite_new('unoCards.png',10,8)
+self.CML=[]
+for cards in range(75):
+    self.CML.append(animation_new(self.sprite,3,cards,cards))
+self.hover = False
+self.playing = False
+self.HandTF = False
+self.distance = 0
+self.close_card = 0
+
+animation_set(self,self.CML[0])
+self.Card0 = [1,2,3,4]
+self.Card1 = [5,6,7,8]
+self.Card2 = [10,9,11,12]
+self.Card3 = [13,14,15,16]
+self.Card4 = [17,18,19,20]
+self.Card5 = [21,22,23,24]
+self.Card6 = [25,26,27,28]
+self.Card7 = [29,30,31,32]
+self.Card8 = [33,34,35,36]
+self.Card9 = [37,38,39,40]
+self.CardSkip = [41,42,43,44]
+self.CardReverse = [45,46,47,48]
+self.CardDraw2 = [49,50,51,52]
+self.CardWild = [65,65,65,65,65]
+self.CardWild4 = [70,70,70,70,70]
+self.CardType = (8,'Green')
+self.hidden = True
+self.CardID = [self.Card0,self.Card1,self.Card2,self.Card3,self.Card4,self.Card5,self.Card6,self.Card7,self.Card8,self.Card9,self.CardSkip,self.CardReverse,self.CardDraw2,self.CardWild,self.CardWild4]
+self.number = 0
+
+#####LOOP#####
+#if self.hidden:
+   # animation_set(self,self.CML[0])
+#elif 
+if self.CardType[1]=="Red":
+    Index = self.CardType[0]
+    Coustume = self.CardID[Index][0]
+    animation_set(self,self.CML[Coustume])
+elif self.CardType[1]=="Yellow":
+    Index = self.CardType[0]
+    Coustume = self.CardID[Index][1]
+    animation_set(self,self.CML[Coustume])
+elif self.CardType[1]=="Green":
+    Index = self.CardType[0]
+    Coustume = self.CardID[Index][2]
+    animation_set(self,self.CML[Coustume])
+elif self.CardType[1]=="Blue":
+    Index = self.CardType[0]
+    Coustume = self.CardID[Index][3]
+    animation_set(self,self.CML[Coustume])
+if collision_check(self,"MousePointer") and self.HandTF:
+
+    if mouse_is_pressed("left")and self.hover:
+        if not EvenCheck(game.TT):
+            if game.Numlor[0] == self.CardType[0] or game.Numlor[1] == self.CardType[1]:
+                self.playing = True
+    #print(self.CardType)
+    if not self.hidden:
+        cardsHit = get_collision_list(game.mp,"Cards")
+        self.distance = 999
+        if len(cardsHit) > 1:
+            for card in cardsHit:
+                offset = abs(mouse_x())
+                #print(offset)
+                if offset <= self.distance:
+                    self.distance = offset
+                    self.close_card = card
+            self.close_card.y = -250
+            self.close_card.hover = True
+            if self.close_card.number!=self.number:
+                self.y = -310
+                self.hover = False
+        else:
+            self.x = -100
+            self.y = -250
+
+            self.hover = True
+elif self.hover and self.HandTF:
+    self.y = -310
+    self.hover = False
+if not game.TC == 0:
+    if game.TC.number == self.number:
+        self.z = 2
+    else:
+        self.z = 1
