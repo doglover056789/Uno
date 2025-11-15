@@ -1,0 +1,10 @@
+def Draw(DrawDeck,TargetHand):
+    cards = DrawDeck.deck.pop(len(DrawDeck.deck)-1)
+    cards.HandTF = True
+    if TargetHand.NameTag == "HHand":
+        cards.y = -310
+        cards.hidden = False
+    TargetHand.HC.append(cards)
+    if TargetHand.NameTag == "UCHand":
+    
+        cards.y = 310
