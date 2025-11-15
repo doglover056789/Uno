@@ -1,0 +1,25 @@
+#############START#############
+#1 0 for each color.2 1-9 for each color.2 draw 2 per each color.
+#2 reverse for each color.2 skips for each color.4 wild. 4 wild draw 4
+#dog_lexi_opinion = ["obie","shittzu","5 years","ball lover","black & white","iritated paw"]
+#print (dog_lexi_opinion[4])
+#10=+2 11=reverse 12=skip 13=wild 14=wild+4
+import  itertools, random
+self.AllCards = []
+self.Numlor = [9,'Red']
+self.AllCards+=list(itertools.product(range(0,1),['Red','Yellow','Green','Blue']))
+self.AllCards+=list(itertools.product(range(1,13),['Red','Yellow','Green','Blue']))
+self.AllCards+=list(itertools.product(range(1,15),['Red','Yellow','Green','Blue']))
+TableBackround()
+self.mp = MousePointer() 
+random.shuffle(self.AllCards)
+self.deck=Deck()
+print(self.AllCards)
+#Test = Cards()
+#Test.CardType = AllCards[1]
+self.TC = 0 #top card
+self.TT = 1 #turn tracker
+print(EvenCheck(1))
+#Computer has to check if one of there colors is the same as the one in the deck or if the numerical value is the same as the one in the deck if both of those arnt true then the take a card from the pile or play a wild to a color they do have 
+#Computer prioritize color over number (check color before number)
+self.db=DB()
