@@ -1,0 +1,11 @@
+#####START#####
+
+#MousePointer start
+self.sprite = sprite_new ("MousePointer.png")
+self.scaleX = 0.001
+self.scaleY = 0.001
+
+#####LOOP#####
+#MousePointer loop
+self.x = mouse_x()
+self.y = mouse_y()
