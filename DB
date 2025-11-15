@@ -1,0 +1,9 @@
+#####START#####
+self.sprite=sprite_new("DrawButton.png")
+self.x = 480
+
+#####LOOP#####
+if mouse_was_pressed("left") and collision_check(self,"MousePointer"):
+    if not EvenCheck(game.TT):
+        Draw(game.deck,game.deck.HumanCards)
+        print("Turn" ,game.TT)
