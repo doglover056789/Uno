@@ -1,0 +1,22 @@
+#####START#####
+
+self.HC = []
+self.NameTag = ""
+self.startingX =-500
+
+#####LOOP#####
+self.startingX = -500
+for cards in self.HC:
+    if cards.playing:
+        cards.x = -300
+        cards.y = 0
+        cards.HandTF = False
+        self.HC.remove(cards)
+        print(self.HC)
+        game.TC = cards
+        game.Numlor = PC(cards)
+        print(game.Numlor)
+        game.TT += 1
+    else:
+        cards.x = self.startingX
+        self.startingX += 100
