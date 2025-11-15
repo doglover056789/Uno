@@ -1,0 +1,6 @@
+#####START#####
+
+self.sprite = sprite_new("Backround.jpeg")
+self.scaleX = 0.65
+self.scaleY = 0.6
+self.z = -0.25
